@@ -1,103 +1,135 @@
-<!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!doctype html>
+<html lang="zh">
+
 <head>
-	<title>I love you not because of who you are, but because of who I am when I am with you. All of me loves all of you.</title>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<style type="text/css">
-		@font-face {
-			font-family: digit;
-			src: url('digital-7_mono.ttf') format("truetype");
-		}
-	</style>
-	<link href="css/default.css" type="text/css" rel="stylesheet">
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/garden.js"></script>
-    <script type="text/javascript" src="js/functions.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+    <style type="text/css">
+        @font-face {
+            font-family: digit;
+            src: url('digital-7_mono.ttf') format("truetype");
+        }
+
+        .digit {
+            font-family: "digit";
+            font-size: 96px;
+        }
+    </style>
+    <script type='text/javascript'>
+        window.onload = function () {
+            clock()
+        }
+    </script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+
+    <title>I love you not because of who you are, but because of who I am when I am with you. All of me loves all of
+        you.
+    </title>
+    <!-- Ying Xie, I have fallen in love with you, Love u forever and ever. -- Binbin Zhang -->
 </head>
 
 <body>
-	<div id="mainDiv">
-		<div id="content">
-			<div id="code">
-				<span class="comments">/**</span><br />
-				<span class="space"/><span class="comments">* I don't know how to express in words my love and desire for you,</span><br />
-				<span class="space"/><span class="comments">* I can show you.</span><br />
-				<span class="space"/><span class="comments">*/</span><br />
-				Boy i = <span class="keyword">new</span> Boy(<span class="string">"Ben"</span>);<br />
-				Girl u = <span class="keyword">new</span> Girl(<span class="string">"Xy"</span>);<br />
-				<span class="comments">// Jun 23, 2020, I told you I love you. </span><br />
-				i.love(u);<br />
-				<span class="comments">// Luckily, you accepted and became my girlfriend eversince.</span><br />
-				u.accepted();<br />
-				<span class="comments">// Since then, I miss u every day.</span><br />
-				i.miss(u);<br />
-				<span class="comments">// And take care of u and our love.</span><br />
-				i.takeCareOf(u);<br />
-				<span class="comments">// You say that you won't be so easy to fall in love with me.</span><br />
-				<span class="comments">// So I keep waiting and I have confidence that you will.</span><br />
-				<span class="keyword">boolean</span> isHesitate = <span class="keyword">true</span>;<br />
-				<span class="keyword">while</span> (isHesitate) {<br />
-				<span class="placeholder"/>i.waitFor(u);<br />
-				<span class="placeholder"/><span class="comments">// I think it is an important decision</span><br />
-				<span class="placeholder"/><span class="comments">// and you should think it over.</span><br />
-				<span class="placeholder"/>isHesitate = u.thinkOver();<br />
-				}<br />
-				<span class="comments">// To be continue...</span><br />
-				<!-- <span class="comments">// After a romantic wedding, we will live happily ever after.</span><br />
-				i.marry(u);<br />
-				i.liveHappilyWith(u);<br /> -->
-			</div>
-			<div id="loveHeart">
-				<canvas id="garden"></canvas>
-				<div id="words">
-					<div id="messages">
-						Ying Xie, I have fallen in love with you for
-						<div id="elapseClock"></div>
-					</div>
-					<div id="loveu">
-						Love u forever and ever.<br/>
-						<div class="signature">- Binbin Zhang</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="copyright">
-			Inspired by <a href="#">FlowerPower</a> project.<br />
-			Copyright © 2020 <a href='https://benalexcheung.cn'>BenalexCheung</a> 2020-2021
-		</div>
-	</div>
-	<script type="text/javascript">
-		var offsetX = $("#loveHeart").width() / 2;
-		var offsetY = $("#loveHeart").height() / 2 - 55;
-		var together = new Date("2020/6/23");
-		// together.setFullYear(2020, 7, 1);
-		together.setHours(9);
-		together.setMinutes(30);
-		together.setSeconds(0);
-		together.setMilliseconds(0);
-		
-		if (!document.createElement('canvas').getContext) {
-			var msg = document.createElement("div");
-			msg.id = "errorMsg";
-			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
-			document.body.appendChild(msg);
-			$("#code").css("display", "none")
-			$("#copyright").css("position", "absolute");
-			$("#copyright").css("bottom", "10px");
-		    document.execCommand("stop");
-		} else {
-			setTimeout(function () {
-				startHeartAnimation();
-			}, 5000);
 
-			timeElapse(together);
-			setInterval(function () {
-				timeElapse(together);
-			}, 500);
+    <main class="masthead d-flex">
+        <div class="container text-center my-auto">
+            <h2 id="elapseClock" class="mb-1">Stylish Portfolio</h2>
+            <h3 id="sentence" class="mb-5">
+                <em>A Free Bootstrap Theme by Start Bootstrap</em>
+            </h3>
+            <span id="time" hidden>123</span>
+            <a id="weekday" class="btn btn-primary btn-xl js-scroll-trigger" onclick="randomSentence()"></a>
+        </div>
+        <div class="overlay"></div>
+    </main>
 
-			adjustCodePosition();
-			$("#code").typewriter();
-		}
-	</script>
+    <script type="text/javascript">
+        function timeElapse(date) {
+            var current = Date();
+            var seconds = (Date.parse(current) - Date.parse(date)) / 1000;
+            var days = Math.floor(seconds / (3600 * 24));
+            seconds = seconds % (3600 * 24);
+            var hours = Math.floor(seconds / 3600);
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
+            seconds = seconds % 3600;
+            var minutes = Math.floor(seconds / 60);
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            seconds = seconds % 60;
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+            var result = "<span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 时 <span class=\"digit\">" + minutes + "</span> 分 <span class=\"digit\">" + seconds + "</span> 秒";
+            $("#elapseClock").html(result);
+        }
+
+        function clock() {
+            //全局变量d，创建Date对象
+            d = new Date();
+            console.log(d)
+            //获得日期时间控件
+            var spt = document.getElementById("time");
+            //格式：2018/2/5  19:19:33
+            spt.innerHTML = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+
+            //获得星期控件
+            var spweek = document.getElementById("weekday");
+            spweek.innerHTML = week();
+        }
+
+        function week() {
+            var weekday = new Array(7)
+            weekday[0] = "星期天 • 偷天换日"
+            weekday[1] = "星期一 • 走向深渊"
+            weekday[2] = "星期二 • 路漫漫"
+            weekday[3] = "星期三 • 夜茫茫"
+            weekday[4] = "星期四 • 冲破黎明前的黑暗"
+            weekday[5] = "星期五 • 勇敢者的游戏"
+            weekday[6] = "星期六 • 浪人"
+
+            return weekday[d.getDay()];
+        }
+    </script>
+    <script type="text/javascript">
+        setInterval(function () {
+            clock();
+        }, 1000);
+        var together = new Date("2020/6/23");
+        together.setHours(9);
+        together.setMinutes(30);
+        together.setSeconds(0);
+        together.setMilliseconds(0);
+
+        if (!document.createElement('canvas').getContext) {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+            document.body.appendChild(msg);
+            document.execCommand("stop");
+        } else {
+            timeElapse(together);
+            setInterval(function () {
+                timeElapse(together);
+            }, 500);
+        }
+    </script>
+
+    <!-- Optional JavaScript -->
+    <script type="text/javascript" src="js/dujitang.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
 </body>
+
 </html>
