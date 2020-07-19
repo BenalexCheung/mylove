@@ -141,39 +141,30 @@
 
         function week() {
             var weekday = new Array(7)
-            weekday[0] = "星期天 • 偷天换日"
-            weekday[1] = "星期一 • 走向深渊"
-            weekday[2] = "星期二 • 路漫漫"
-            weekday[3] = "星期三 • 夜茫茫"
-            weekday[4] = "星期四 • 冲破黎明前的黑暗"
-            weekday[5] = "星期五 • 勇敢者的游戏"
-            weekday[6] = "星期六 • 浪人"
-
+            weekday[0] = "星期天 • 自定义"
+            weekday[1] = "星期一 • 寻雾启事"
+            weekday[2] = "星期二 • 苏格拉没有底"
+            weekday[3] = "星期三 • 梦游计"
+            weekday[4] = "星期四 • 不如吃茶去"
+            weekday[5] = "星期五 • 寻宝游戏"
+            weekday[6] = "星期六 • 温泉"
             return weekday[d.getDay()];
         }
     </script>
     <script type="text/javascript">
-        setInterval(function () {
-            clock();
-        }, 1000);
         var together = new Date("2020/6/23");
         together.setHours(9);
         together.setMinutes(30);
         together.setSeconds(0);
         together.setMilliseconds(0);
 
-        if (!document.createElement('canvas').getContext) {
-            var msg = document.createElement("div");
-            msg.id = "errorMsg";
-            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
-            document.body.appendChild(msg);
-            document.execCommand("stop");
-        } else {
+        timeElapse(together);
+        setInterval(function () {
             timeElapse(together);
-            setInterval(function () {
-                timeElapse(together);
-            }, 500);
-        }
+        }, 500);
+        setInterval(function () {
+            clock();
+        }, 1000);
     </script>
 
     <!-- Optional JavaScript -->
