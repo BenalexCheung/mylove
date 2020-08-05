@@ -69,7 +69,7 @@
         }
 
         .digit {
-            font-family: "digit";
+            font-family: "";
             font-size: 96px;
         }
     </style>
@@ -91,7 +91,7 @@
 <body>
 
     <main class="masthead d-flex">
-        <div class="container text-center my-auto">
+        <div class="container text-center text-primary my-auto">
             <h2 id="elapseClock" class="mb-1" onclick="randomAnswer()">Stylish Portfolio</h2>
             <h3 id="sentence" class="mb-5">
                 <em>A Free Bootstrap Theme by Start Bootstrap</em>
@@ -136,18 +136,18 @@
 
             //获得星期控件
             var spweek = document.getElementById("weekday");
-            spweek.innerHTML = week();
+            spweek.innerHTML = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + " " + week();
         }
 
         function week() {
             var weekday = new Array(7)
-            weekday[0] = "星期天 • 自定义"
-            weekday[1] = "星期一 • 寻雾启事"
-            weekday[2] = "星期二 • 苏格拉没有底"
-            weekday[3] = "星期三 • 梦游计"
-            weekday[4] = "星期四 • 不如吃茶去"
-            weekday[5] = "星期五 • 寻宝游戏"
-            weekday[6] = "星期六 • 温泉"
+            weekday[0] = "星期天"
+            weekday[1] = "星期一"
+            weekday[2] = "星期二"
+            weekday[3] = "星期三"
+            weekday[4] = "星期四"
+            weekday[5] = "星期五"
+            weekday[6] = "星期六"
             return weekday[d.getDay()];
         }
     </script>
