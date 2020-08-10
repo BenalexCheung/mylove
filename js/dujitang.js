@@ -1574,4 +1574,4 @@ function randomSentence() {
   document.getElementById('sentence').innerHTML = soul[Math.floor(Math.random() * soul.length)];
 }
 
-// randomSentence();
+randomSentence();
